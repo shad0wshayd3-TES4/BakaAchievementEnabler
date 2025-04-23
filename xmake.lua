@@ -5,7 +5,7 @@ set_xmakever("2.9.4")
 includes("extern/commonlibobr")
 
 -- set project
-set_project("BakaAchievementEnabler-OBR")
+set_project("xinput1_3")
 set_version("1.0.0")
 set_license("GPL-3.0")
 
@@ -24,13 +24,13 @@ add_rules("mode.debug", "mode.releasedbg")
 add_rules("plugin.vsxmake.autoupdate")
 
 -- setup targets
-target("BakaAchievementEnabler-OBR")
+target("xinput1_3")
     -- bind local dependencies
     add_deps("commonlibobr")
 
     -- add commonlibobr plugin
     add_rules("commonlibobr.plugin", {
-        name = "BakaAchievementEnabler-OBR",
+        name = "xinput1_3",
         author = "shad0wshayd3"
     })
 
