@@ -54,17 +54,27 @@ namespace Hooks
 		if (ver.has_value() && ver.value() > OBSE::RUNTIME_LATEST)
 		{
 			auto msg = std::vformat(
-				"""Baka Achievement Enabler has been DISABLED.\n"""
-				"""This version of the mod (1.1) was built for game version {}.\n"""
-				"""You are running a later version of the game: {}\n\n"""
-				"""You can continue playing, but achievements may not unlock!\n"""
-				"""Check the mod page for an update!""",
+				""
+				"Baka Achievement Enabler has been DISABLED.\n"
+				""
+				""
+				"This version of the mod (1.1) was built for game version {}.\n"
+				""
+				""
+				"You are running a later version of the game: {}\n\n"
+				""
+				""
+				"You can continue playing, but achievements may not unlock!\n"
+				""
+				""
+				"Check the mod page for an update!"
+				"",
 				std::make_format_args(OBSE::RUNTIME_LATEST, ver.value()));
-			
+
 			REX::W32::MessageBoxA(NULL, msg.c_str(), "Baka Achievement Enabler", 0);
 			return;
 		}
-		
+
 		EnableAchievements();
 		PreventBreakingAchievements();
 	}
