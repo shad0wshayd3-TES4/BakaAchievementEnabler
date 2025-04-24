@@ -26,12 +26,19 @@ namespace Hooks
 			static REL::Relocation target{ REL::Offset(0x48CC9E0) };
 			target.write<0xED>({ 0x31, 0xC0, 0x90, 0x90, 0x90, 0x90, 0x90 });
 		}
+
+		static void InstallNoMsg()
+		{
+			static REL::Relocation target{ REL::Offset(0x497F950) };
+			target.write_fill<0x19C>(REL::NOP, 0x34);
+		}
 	}
 
 	static void Install()
 	{
 		InstallNOP();
 		InstallXOR();
+		InstallNoMsg();
 	}
 }
 
