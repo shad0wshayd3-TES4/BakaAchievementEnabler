@@ -1,3 +1,3 @@
-[submodule "extern/commonlibobr"]
-	path = extern/commonlibobr
-	url = https://github.com/shad0wshayd3-TES4/CommonLibOBR.git
+[submodule "extern/commonlibob64"]
+	path = extern/commonlibob64
+	url = https://github.com/shad0wshayd3-TES4/CommonLibOB64.git
