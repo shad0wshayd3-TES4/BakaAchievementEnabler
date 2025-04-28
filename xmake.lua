@@ -2,7 +2,7 @@
 set_xmakever("2.9.4")
 
 -- include local folders
-includes("extern/commonlibob64")
+includes("lib/commonlibob64")
 
 -- set project
 set_project("BakaAchievementEnabler")
