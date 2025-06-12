@@ -6,7 +6,7 @@ includes("lib/commonlibob64")
 
 -- set project
 set_project("BakaAchievementEnabler")
-set_version("3.0.0")
+set_version("4.0.0")
 set_license("GPL-3.0")
 
 -- set defaults
