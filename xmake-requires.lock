@@ -11,13 +11,12 @@
             },
             version = "4.0.2"
         },
-        ["rsm-mmio#31fecfc4"] = {
+        ["commonlib-shared 2546a8d1257cd5e8c68adcdb2c5633c0c7462865#0defcfe0"] = {
             repo = {
-                branch = "master",
-                commit = "6fe5db7e5067b779e6ddb505a14a7ed94b7b1bc2",
-                url = "https://gitlab.com/tboox/xmake-repo.git"
+                commit = "47eca6ffcb79208b9f757df369b2ddad322aac16",
+                url = "https://github.com/libxse/libxse-xrepo"
             },
-            version = "2.0.0"
+            version = "2546a8d1257cd5e8c68adcdb2c5633c0c7462865"
         },
         ["spdlog#9c36f0a9"] = {
             repo = {

@@ -15,22 +15,25 @@ namespace Hooks
 
 		static void InstallNOP()
 		{
-			hkNop<0x49991C0, 0x09C, 0x0D>::Install();  // cmp rbx+2B1, r13b
-			hkNop<0x499AE20, 0x000, 0x09>::Install();  // mov rcx+2B0, 0x101
-			hkNop<0x499E550, 0x000, 0x10>::Install();  // mov rcx+2B1, r8b
+			hkNop<0x49764E0, 0x09C, 0x0D>::Install();  // cmp rbx+2B1, r13b
+			hkNop<0x497A710, 0x000, 0x09>::Install();  // mov rcx+2B0, 0x101
+			hkNop<0x49824D0, 0x000, 0x10>::Install();  // mov rcx+2B1, r8b
 		}
 
 		static void InstallXOR()
 		{
 			// quicksave/autosave +0xED; movzx eax, rbx+2B1
-			static REL::Relocation target{ REL::Offset(0x48CC9E0) };
+			static REL::Relocation target{ REL::Offset(0x48ADB00) };
 			target.write<0xED>({ 0x31, 0xC0, 0x90, 0x90, 0x90, 0x90, 0x90 });
 		}
 
 		static void InstallNoMsg()
 		{
-			static REL::Relocation target{ REL::Offset(0x497F950) };
-			target.write_fill<0x19C>(REL::NOP, 0x34);
+			static REL::Relocation target{ REL::Offset(0x495BC60) };
+			static constexpr auto  TARGET_ADDR{ 0x19C };
+			static constexpr auto  TARGET_RETN{ 0x1D0 };
+			static constexpr auto  TARGET_FILL{ TARGET_RETN - TARGET_ADDR };
+			target.write_fill<TARGET_ADDR>(REL::NOP, TARGET_FILL);
 		}
 	}
 
